@@ -1,0 +1,17 @@
+{% if news_list %}
+    <ul>
+    {% for news in news_list %}
+        <li>
+            <a href = "/coffe_news/{{news.date}}/">{{news.id}}</a>
+            <a href = "/coffe_news/{{news.date}}/">{{news.date}}</a>
+            <a href = "/coffe_news/{{news.date}}/">{{news.title}}</a>
+            <a href = "/coffe_news/{{news.date}}/">{{news.link}}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>질문이 없습니다</p>
+{% endif %}
+
+    
+    
