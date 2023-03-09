@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import pymysql
-
+import os
 pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -133,5 +133,6 @@ USE_TZ = True
 # STATIC_ROOT = BASE_DIR / 'static/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    # BASE_DIR / 'static',
+    os.path.join(BASE_DIR, 'static'),
 ]

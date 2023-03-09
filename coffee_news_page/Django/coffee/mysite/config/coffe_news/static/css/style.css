@@ -224,6 +224,7 @@ svg {
 
 table {
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 caption {
