@@ -1,0 +1,78 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+  	<title>coffe_news</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	{% comment %} <link rel="stylesheet" href="/static/style.css"> {% endcomment %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-4">
+					<h2 class="heading-section">coffee_news</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="h5 mb-4 text-center">news_table</h3>
+					<div class="table-wrap">
+						<table class="table myaccordion table-hover" id="accordion">
+						  <thead>
+						    <tr>
+						      <th>No</th>
+							  <th>DATE</th>
+						      <th>TITLE</th>
+						      <th>LINK</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+							{% if news_list %}
+
+								{% for news in news_list %}
+									
+
+									<tr>
+										
+										<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+												<div class="card-body">
+													<th scope="row">{{news.id}}</th>
+													<td width = '600px'>{{news.date}}</td>
+													<td width = '2500px'>{{news.title}}</td>
+													
+													<td><a href="{{news.link}}" target = _blank>{{news.link}}</a></td>
+													
+													
+													
+												</div>
+										</div>
+									
+								{% endfor %}
+							{% else %}
+								<p>질문이 없습니다</p>	
+							{%endif%}
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+	</body>
+</html>
+
